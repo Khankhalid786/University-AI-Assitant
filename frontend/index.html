@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>University Assistant</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <div class="bg-shape shape-a" aria-hidden="true"></div>
+  <div class="bg-shape shape-b" aria-hidden="true"></div>
+
+  <main id="loginShell" class="auth-shell">
+    <header class="auth-header">
+      <p class="eyebrow">University Bot</p>
+      <h1>Login</h1>
+      <p class="auth-subtitle">Sign in to continue to the student helpdesk.</p>
+    </header>
+
+    <form id="loginForm" class="login-form">
+      <label for="usernameInput">Username</label>
+      <input id="usernameInput" name="username" type="text" autocomplete="username" required>
+
+      <label for="passwordInput">Password</label>
+      <input id="passwordInput" name="password" type="password" autocomplete="current-password" required>
+
+      <button id="loginBtn" type="submit">Login</button>
+      <p id="loginError" class="auth-error" aria-live="polite"></p>
+    </form>
+  </main>
+
+  <main id="chatShell" class="chat-shell hidden">
+    <header class="chat-header">
+      <div>
+        <p class="eyebrow">University Bot</p>
+        <h1>Student Helpdesk</h1>
+      </div>
+      <div class="header-actions">
+        <button id="startSessionBtn" class="ghost-btn" type="button">Start Session</button>
+        <button id="resetBtn" class="ghost-btn" type="button">Reset</button>
+        <button id="exitSessionBtn" class="ghost-btn danger" type="button">Exit Session</button>
+      </div>
+    </header>
+
+    <p id="sessionStateText" class="session-state" aria-live="polite"></p>
+
+    <section id="chatMessages" class="chat-messages" aria-live="polite" aria-label="Chat conversation"></section>
+
+    <div class="quick-actions" aria-label="Suggested prompts">
+      <button class="chip" type="button" data-prompt="What are the exam rules?">Exam rules</button>
+      <button class="chip" type="button" data-prompt="List computer science courses with credits.">CS courses</button>
+      <button class="chip" type="button" data-prompt="Which departments are there?">Departments</button>
+    </div>
+
+    <form id="chatForm" class="chat-input-wrap">
+      <label for="messageInput" class="sr-only">Type your message</label>
+      <textarea id="messageInput" placeholder="Ask about courses, policies, faculty, scholarships..." rows="1" required></textarea>
+      <button id="sendBtn" type="submit">Send</button>
+    </form>
+  </main>
+
+  <script src="/static/script.js"></script>
+</body>
+</html>
