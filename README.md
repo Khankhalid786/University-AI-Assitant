@@ -94,7 +94,7 @@ pip install -r requirements.txt
 export GOOGLE_API_KEY=your_api_key
 ```
 
-5. Run the FastAPI server:
+5. Run the App:
 
 ```bash
 python Bot.py
